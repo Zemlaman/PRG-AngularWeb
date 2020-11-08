@@ -1,0 +1,11 @@
+<div id="content">
+  <h1>Kontaktní formlulář</h1>
+  <form (ngSubmit)="submit()">
+    <input class="form-control" type="text" placeholder="Name" aria-label="Search"
+           name="nameInput" type="text" [(ngModel)]="name">
+    <input class="form-control" type="text" placeholder="Email" aria-label="Search"
+           name="emailInput" type="email" [(ngModel)]="email">
+    <textarea placeholder="Your message" name="messageInput" [(ngModel)]="message"></textarea>
+    <button id="formButt">POSLAT</button>
+  </form>
+</div>
