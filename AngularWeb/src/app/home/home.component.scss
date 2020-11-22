@@ -1,4 +1,16 @@
-.html {
-  text-align: center;
+.container{
 
+}
+
+.container-start{
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsnx1NXAbSVTwV1qPJzoSDydW1k5__HjP8A&usqp=CAU");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

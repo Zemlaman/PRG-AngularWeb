@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 interface ISearchOption {
   title: string;
@@ -13,6 +13,7 @@ interface ISearchOption {
 export class AppComponent {
   title = 'angular-stranka';
   search = '';
+  rolled = false;
   resultStorage: ISearchOption[] = [
     {title: ' home ', path: ''},
     {title: ' O nás ', path: 'about'},
