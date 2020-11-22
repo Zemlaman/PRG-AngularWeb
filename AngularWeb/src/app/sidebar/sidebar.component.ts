@@ -21,18 +21,6 @@ export class SidebarComponent implements OnInit {
     {title: 'Contact', path: 'contact'}
   ];
 
-  get filteredOptions(): SearchOption[] {
-    const filteredOption = [];
-    const search = this.search.toLowerCase();
-    for (const option of this.options) {
-      if (option.title.toLowerCase().includes(search)) {
-        filteredOption.push(option);
-      }
-    }
-    return filteredOption;
-  }
-
-
   toggleOptions() {
     if (this.block === true) {
       this.block = false;
@@ -44,6 +32,7 @@ export class SidebarComponent implements OnInit {
   toggleOptionsOff() {
     this.block = false;
   }
+
   toggleOffSidebar() {
     if (this.rolled === true) {
       this.rolled = false;
@@ -54,9 +43,10 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
 
+  }
 }
+
 class SearchOption {
   title: string;
   path: string;
