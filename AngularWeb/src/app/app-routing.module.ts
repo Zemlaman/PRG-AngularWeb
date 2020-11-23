@@ -4,6 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {UsersComponent} from "./users/users.component";
+import {UserDetailComponent} from "./user-detail/user-detail.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'users', component: UsersComponent},
-
+  {path: 'user/:id', component: UserDetailComponent},
+  {path: '**', redirectTo: "users"},
 ];
 
 @NgModule({

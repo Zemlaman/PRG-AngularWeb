@@ -11,7 +11,9 @@ export interface IUserEntity{
 })
 export class UsersService {
 
-  private users: IUserEntity[] = [];
+  private users: IUserEntity[] = [
+    {id: 1, username: "Zemlaman"}
+  ];
 
   constructor() {
 
@@ -19,5 +21,16 @@ export class UsersService {
 
   getAllUsers(): Observable<IUserEntity[]> {
     return of(this.users);
+  }
+
+  getUserById(id:number): Observable<IUserEntity> {
+    let user: IUserEntity;
+    for(const  u of this.users){
+      if(id === u.id){
+        user = u;
+        break;
+      }
+    }
+    return of(user);
   }
 }
