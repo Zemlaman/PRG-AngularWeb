@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
+import {UserCreateComponent} from "./user-create/user-create.component";
 
 export interface IUserEntity{
   id: number;
@@ -12,8 +13,11 @@ export interface IUserEntity{
 export class UsersService {
 
   private users: IUserEntity[] = [
-    {id: 1, username: "Zemlaman"}
   ];
+
+  newid: number;
+  newusername: string;
+
 
   constructor() {
 
@@ -33,4 +37,10 @@ export class UsersService {
     }
     return of(user);
   }
+
+  addUser(newid: number, newusername: string): Observable<IUserEntity[]> {
+    this.users.add({id: this.newid, username: this.newusername});
+    return of(this.users);
+  }
+
 }
