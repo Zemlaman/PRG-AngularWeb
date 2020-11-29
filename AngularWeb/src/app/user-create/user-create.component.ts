@@ -8,10 +8,15 @@ import {map} from "rxjs/operators";
   styleUrls: ['./user-create.component.scss']
 })
 export class UserCreateComponent {
-  newusername = '';
-  newid: number = (Math.random() * 100);
+  newUsername: "";
+  newId: number;
 
   constructor() {}
+
+  addUser() {
+    this.newUsername = this.newUsername;
+    this.newId = (Math.random() * 100);
+  }
 
   ngOnInit(): void {
   }

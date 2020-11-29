@@ -10,13 +10,13 @@ export interface IUserEntity{
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UsersService implements UserCreateComponent{
+
+  newUsername;
+  newId;
 
   private users: IUserEntity[] = [
   ];
-
-  newid: number;
-  newusername: string;
 
 
   constructor() {
@@ -38,9 +38,12 @@ export class UsersService {
     return of(user);
   }
 
-  addUser(newid: number, newusername: string): Observable<IUserEntity[]> {
-    this.users.add({id: this.newid, username: this.newusername});
+  addUser = (newId:number, newUsername:string): Observable<IUserEntity[]> => {
+    this.users.push({id: this.newId, username: this.newUsername});
     return of(this.users);
+  };
+
+  ngOnInit(): void {
   }
 
 }
