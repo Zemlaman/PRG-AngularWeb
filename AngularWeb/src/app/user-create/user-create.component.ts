@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {map} from "rxjs/operators";
+import {Observable, of} from "rxjs";
+import {UsersService} from "../users.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -7,15 +10,19 @@ import {map} from "rxjs/operators";
   templateUrl: './user-create.component.html',
   styleUrls: ['./user-create.component.scss']
 })
-export class UserCreateComponent {
-  newUsername: "";
-  newId: number;
+export class UserCreateComponent implements  OnInit{
 
-  constructor() {}
+  username = "";
 
-  addUser() {
-    this.newUsername = this.newUsername;
-    this.newId = (Math.random() * 100);
+
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly  router: Router
+  ) {}
+
+  addUser(): void {
+    this.usersService.addUser(this.username)
+      .subscribe(user => this.router.navigateByUrl('/user/+ user.id'));
   }
 
   ngOnInit(): void {
