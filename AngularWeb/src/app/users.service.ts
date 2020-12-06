@@ -13,6 +13,7 @@ export interface IUserEntity{
 export class UsersService {
 
   newUsername;
+  changedUsername;
   newId;
 
   private users: IUserEntity[] = [
@@ -43,6 +44,10 @@ export class UsersService {
     const user: IUserEntity = {id: newId, username: newUsername};
     this.users.push(user);
     return of(user);
+  }
+
+  changeUsername(): void {
+
   }
 
   ngOnInit(): void {

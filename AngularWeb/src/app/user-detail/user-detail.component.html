@@ -1,5 +1,12 @@
 <div class="container">
   <div class="container-start">
-  <p>{{user?.username}}</p>
+  <p class="name">User: {{user?.username}}</p>
+    <form (ngSubmit)="changeUsername()">
+      <input class="form-control" type="text" placeholder="Username" aria-label="Search"
+             name="nameInput" type="text" [(ngModel)]="newUsername">
+      <button id="formButt">CHANGE USERNAME</button>
+      <p>OR</p>
+      <button id="delButt">DELETE USER</button>
+    </form>
   </div>
 </div>

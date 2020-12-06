@@ -11,18 +11,28 @@ import {delay} from "rxjs/operators";
 export class UserDetailComponent implements OnInit {
 
   user: IUserEntity;
+  newUsername = "";
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
-    private readonly  userService: UsersService,
+    private readonly  usersService: UsersService,
     private readonly  router: Router
   ) { }
+
+  changeUsername(): void {
+    this.usersService.changeUsername(this.newUsername)
+      .subscribe(user => this.router.navigateByUrl('/user/+ user.id'));
+  }
+
+  deleteUser(): void {
+
+  }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(p => {
       const id = p.get("id");
       const idNum = parseInt(id, 10);
-      this.userService.getUserById(idNum)
+      this.usersService.getUserById(idNum)
         .subscribe(
           u => {
             if(u) {
