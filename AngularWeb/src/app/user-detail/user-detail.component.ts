@@ -22,11 +22,13 @@ export class UserDetailComponent implements OnInit {
   changeUsername(id: number): void {
     this.usersService.changeUsername(id, this.newUsername);
     this.router.navigateByUrl('/users');
+    console.error("Username changed.");
   }
 
   deleteUser(id: number): void {
     this.usersService.deleteUsername(id, this.newUsername);
     this.router.navigateByUrl('user-create');
+    console.error("User uz neni kamo, neslo nic.");
   }
 
   ngOnInit(): void {
