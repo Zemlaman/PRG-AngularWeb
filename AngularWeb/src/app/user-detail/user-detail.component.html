@@ -2,8 +2,8 @@
   <div class="container-start">
   <p class="name">User: {{user?.username}}</p>
     <form>
-      <input name="newUsername" value="{{user.username}}" [(ngModel)]="newUsername">
-      <button class="btn-form" name="save" (click)="changeUsername(user.id)">SAVE</button>
+      <input name="newUsername"placeholder="new username" value="{{user.username}}" [(ngModel)]="newUsername">
+      <button class="btn-form" name="save" (click)="changeUsername(user.id)">CHANGE</button>
       <p>OR</p>
       <button class="btn-form" name="save" (click)="deleteUser(user.id)">DELETE</button>
     </form>

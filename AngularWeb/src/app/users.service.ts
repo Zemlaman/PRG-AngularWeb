@@ -49,7 +49,7 @@ export class UsersService {
   changeUsername(id: number, newUsername: string){
     if (this.users.find(u => u.id === id)){
       const user: IUserEntity = this.users.find(u => u.id === id);
-      user.username = newUsername;
+        user.username = newUsername;
     }
   }
 
