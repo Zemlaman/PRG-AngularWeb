@@ -46,7 +46,16 @@ export class UsersService {
     return of(user);
   }
 
-  changeUsername(): void {
+  changeUsername(id: number, newUsername: string): boolean{
+    if (this.users.find(u => u.id === id)){
+      const user: IUserEntity = this.users.find(u => u.id === id);
+      user.username = newUsername;
+      return true;
+    }
+    return false;
+  }
+
+  deleteUsername(){
 
   }
 

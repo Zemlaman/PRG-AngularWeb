@@ -19,13 +19,14 @@ export class UserDetailComponent implements OnInit {
     private readonly  router: Router
   ) { }
 
-  changeUsername(): void {
-    this.usersService.changeUsername(this.newUsername)
-      .subscribe(user => this.router.navigateByUrl('/user/+ user.id'));
+  changeUsername(id: number): void {
+    this.usersService.changeUsername(id, this.newUsername);
+    this.router.navigateByUrl('/users');
   }
 
   deleteUser(): void {
-
+    this.usersService.deleteUsername();
+    this.router.navigateByUrl('user-create');
   }
 
   ngOnInit(): void {
