@@ -24,8 +24,8 @@ export class UserDetailComponent implements OnInit {
     this.router.navigateByUrl('/users');
   }
 
-  deleteUser(): void {
-    this.usersService.deleteUsername();
+  deleteUser(id: number): void {
+    this.usersService.deleteUsername(id, this.newUsername);
     this.router.navigateByUrl('user-create');
   }
 

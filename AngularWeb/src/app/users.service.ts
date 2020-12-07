@@ -46,17 +46,19 @@ export class UsersService {
     return of(user);
   }
 
-  changeUsername(id: number, newUsername: string): boolean{
+  changeUsername(id: number, newUsername: string){
     if (this.users.find(u => u.id === id)){
       const user: IUserEntity = this.users.find(u => u.id === id);
       user.username = newUsername;
-      return true;
     }
-    return false;
   }
 
-  deleteUsername(){
-
+  deleteUsername(id: number, newUsername: string){
+    if (this.users.find(u => u.id === id)){
+      const user: IUserEntity = this.users.find(u => u.id === id);
+      delete user.username;
+      delete user.id;
+    }
   }
 
   ngOnInit(): void {
