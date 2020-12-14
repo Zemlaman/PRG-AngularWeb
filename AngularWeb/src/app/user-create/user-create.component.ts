@@ -22,7 +22,7 @@ export class UserCreateComponent implements  OnInit{
 
   addUser(): void {
     this.usersService.addUser(this.username)
-      .subscribe(user => this.router.navigateByUrl('/user/+ user.id'));
+      .subscribe(user => this.router.navigateByUrl("/users"));
     console.error("Výtej cápečku.");
   }
 
