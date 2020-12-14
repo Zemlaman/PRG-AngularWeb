@@ -54,10 +54,9 @@ export class UsersService {
   }
 
   deleteUsername(id: number, newUsername: string){
-    if (this.users.find(u => u.id === id)){
-      const user: IUserEntity = this.users.find(u => u.id === id);
-      delete user.username;
-      delete user.id;
+    const user: number = this.users.findIndex(u => u.id === id);
+    if (user != -1){
+      this.users.splice(user);
     }
   }
 
