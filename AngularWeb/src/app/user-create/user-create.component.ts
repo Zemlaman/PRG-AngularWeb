@@ -23,7 +23,7 @@ export class UserCreateComponent implements  OnInit{
   addUser(): void {
     this.usersService.addUser(this.username)
       .subscribe(user => this.router.navigateByUrl("/users"));
-    console.error("Výtej cápečku.");
+    console.error("Vítej cápečku.");
   }
 
   ngOnInit(): void {
