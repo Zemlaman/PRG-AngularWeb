@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { MyPipePipe } from './my-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserCreateComponent } from './user-create/user-create.component';
     HeaderComponent,
     UsersComponent,
     UserDetailComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    MyPipePipe
   ],
   imports: [
     BrowserModule,
