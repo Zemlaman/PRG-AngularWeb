@@ -7,7 +7,7 @@ export class MyPipePipe implements PipeTransform {
 
   transform(value: string, newEnd: string): string {
         let upgusr = value;
-        upgusr = upgusr.slice(0, newEnd.length);
+        upgusr = upgusr.substring(0, newEnd.length);
         upgusr = upgusr + newEnd;
         return upgusr;
   }
