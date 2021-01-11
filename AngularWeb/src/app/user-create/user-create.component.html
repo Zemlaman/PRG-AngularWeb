@@ -2,11 +2,16 @@
   <div class="container-start">
     <div id="content">
       <h1>Create new user</h1>
-      <form (ngSubmit)="addUser()">
-        <input class="form-control" type="text" placeholder="Username" aria-label="Search"
-               name="nameInput" type="text" [(ngModel)]="username">
+      <form (ngSubmit)="addUser()" #form="ngForm">
+        <input type="form" required minlength="3" maxlength="20" #usernameEl="ngModel" class="form-control" type="text" placeholder="Username" aria-label="Search" name="nameInput" type="text"
+               [(ngModel)]="username">
         <button id="formButt">SUBMIT</button>
       </form>
+      <div *ngIf="usernameEl.invalid && usernameEl.touched">
+        <span *ngIf="usernameEl.errors.minlength">Username is too short, minimal length is {{usernameEl.errors.minlength.requiredLength}}</span>
+        <span *ngIf="usernameEl.errors.maxlength">Username is too long, maximal length is {{usernameEl.errors.maxlength}}</span>
+        <span *ngIf="usernameEl.errors.required">Username required</span>
+      </div>
     </div>
   </div>
 </div>
